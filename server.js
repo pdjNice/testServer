@@ -45,11 +45,5 @@ app.get("/", (req, res, next) => {
   }
 });
 
+module.exports = app;
 
-app.listen("4000", (err) => {
-  if (err) {
-    console.log("启动错误");
-  } else {
-    console.log("启动成功");
-  }
-});
