@@ -23,7 +23,7 @@ if (cluster.isMaster) {
     workers[worker.process.pid] = worker;
   }
 } else {
-  app.listen("8080", (err) => {
+  app.listen("80", (err) => {
     if (err) {
       console.log("启动错误");
     } else {
