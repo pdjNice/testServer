@@ -13,9 +13,10 @@ const app = new expres();
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(expres.static('views'))
 app.use("/login", login);
 app.use("/backControl", backControl);
-app.use("/test", test)
+app.use("/test", test);
 
 
 app.set('views', __dirname);
@@ -25,7 +26,7 @@ app.engine('.html', require('ejs').__express);
 app.get("/", (req, res, next) => {
   //不带参数的请求返回首页
   if (Object.keys(req.query).length === 0) {
-    res.render("./views/build/static/index.html");
+    res.render("./views/build/index.html");
   }
   //微信开发者接入
   // 1）将token、timestamp、nonce三个参数进行字典序排序
